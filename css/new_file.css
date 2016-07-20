@@ -1,0 +1,48 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family:"Microsoft YaHei";
+}
+html,body{
+	width: 100%;
+	height: 100%;
+}
+.nav{
+	width: 100%;
+	height: 55px;
+	background: #42474B;
+	position:fixed;
+	top:-55px;
+	z-index: 1;
+}
+#main{
+	width: 100%;
+	height: 100%;
+}
+.show{
+	width: 100%;
+	background: green;
+	position: absolute;
+	text-align: center;
+}
+section{
+	width: 100%;
+	overflow: hidden;
+}
+.welcome{
+	background:linear-gradient(to bottom,#71BA51 0,#00B16A 100%);
+	color: white;
+	font-size: 100px;
+}
+.home{
+	background:linear-gradient(to bottom,#4ECDC4 0,#19B5FE 100%);
+}
+.skill{
+	background:linear-gradient(to bottom,#ED6461 0,#3F80E9 100%);
+}
+.experience{
+	background:linear-gradient(to bottom,#26B1B6 0,#2DCB70 100%);
+}
+.endpage{
+	background:linear-gradient(to bottom,#F88E8B 0,#EF5C4C 100%);
+}
