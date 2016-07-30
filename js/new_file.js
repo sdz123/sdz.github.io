@@ -26,14 +26,15 @@ $(function() {
 	MouseWheel($(".show")[0], fun);
 	var top = null;
 	var swit = true;
+
 	function fun(bol) {
 		if(swit) {
 			if(bol) {
 				$(".nav").animate({
 					top: 0
-				},{
-					easing:"easeOutBounce",
-					duration:500
+				}, {
+					easing: "easeOutBounce",
+					duration: 500
 				})
 				if(Math.abs($(".show")[0].offsetTop) >= height * 4) {
 					$(".show").css("top", -height * 4)
@@ -41,7 +42,7 @@ $(function() {
 					top -= height;
 					$(".show").animate({
 						top: top
-					},500)
+					}, 500)
 				}
 				swit = !swit;
 				setTimeout(function() {
@@ -70,6 +71,5 @@ $(function() {
 			}
 		}
 	}
-	$(".welcome p").css("margin-top",(height-100)/2)
+	$(".welcome p").css("margin-top", (height - 100) / 2)
 })
-
