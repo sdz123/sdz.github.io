@@ -18,7 +18,10 @@ $(function() {
 	}
 
 	function loadeds() {
-		$(".welcome").css({background:"url(img/bg.jpg) no-repeat center center",backgroundSize:"cover"})
+		$(".welcome").css({
+			background: "url(img/bg.jpg) no-repeat center center",
+			backgroundSize: "cover"
+		})
 		var height = $(window).height();
 		$(".show").height(height * 5);
 		$("section").height(height);
@@ -91,6 +94,5 @@ $(function() {
 				}
 			}
 		}
-		$(".welcome p").css("margin-top", (height - 100) / 2);
 	}
 })
