@@ -33,9 +33,6 @@ section{
 .welcome{
 	width: 100%;
 	min-width: 500px;
-	/*background:url(../img/bg.jpg) no-repeat;*/
-	background-position:center center; 
-	background-size: cover;
 	color: white;
 	font-size: 100px;
 }

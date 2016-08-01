@@ -18,12 +18,11 @@ $(function() {
 	}
 
 	function loadeds() {
-
-		$(".welcome").css("background", "url(img/bg.jpg) no-repeat")
-
+		$(".welcome").css({background:"url(img/bg.jpg) no-repeat center center",backgroundSize:"cover"})
 		var height = $(window).height();
 		$(".show").height(height * 5);
-		$("section").height(height); //处理浏览器滚轮兼容
+		$("section").height(height);
+		//处理浏览器滚轮兼容
 		function MouseWheel(ele, fun) {
 			var agent = window.navigator.userAgent;
 			if(agent.indexOf("Firefox") != -1) {
