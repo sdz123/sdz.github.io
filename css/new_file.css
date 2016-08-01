@@ -55,7 +55,7 @@ section {
 }
 
 .animate {
-	-webkit-animation: start ease 2s forwards;
+	-webkit-animation: start ease 5s forwards;
 }
 
 .mask span {
