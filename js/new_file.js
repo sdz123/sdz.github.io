@@ -17,12 +17,16 @@ $(function() {
 	}
 
 	function loadeds() {
+		var height = $(window).height();
 		$(".welcome").css({
 			background: "url(img/bg.jpg) no-repeat center center",
 			backgroundSize: "cover"
 		})
+		$(".welcom").css({
+			marginTop:height/2-$(".welcom").height()/2
+		})
 		$(".mask").addClass("animate");
-		var height = $(window).height();
+		
 		$(".show").height(height * 5);
 		$("section").height(height);
 		//处理浏览器滚轮兼容
