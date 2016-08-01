@@ -23,7 +23,6 @@ html,body{
 }
 .show{
 	width: 100%;
-	background: green;
 	position: absolute;
 	text-align: center;
 }
@@ -34,7 +33,7 @@ section{
 .welcome{
 	width: 100%;
 	min-width: 500px;
-	background:url(../img/bg.jpg) no-repeat;
+	/*background:url(../img/bg.jpg) no-repeat;*/
 	background-position:center center; 
 	background-size: cover;
 	color: white;

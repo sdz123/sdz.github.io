@@ -1,8 +1,27 @@
 $(function() {
+	// 图片预加载.
+
+	var obj = {
+		arr: ["../img/bg.jpg"],
+		loaded: loaded()
+	}
+	load(obj);
+
+	function load(obj) {
+		for(var i = 0; i < obj.arr.length; i++) {
+			var img = new Image();
+			img.onload = function() {
+				obj.loaded();
+			}
+		}
+	}
+
+	function loaded() {
+		$(".welcome").css("background", "url(img/bg.jpg) no-repeat")
+	}
 	var height = $(window).height();
-	$(".show").height(height * 5);
-	$("section").height(height);
-	//处理浏览器滚轮兼容
+$(".show").height(height * 5);
+$("section").height(height);	//处理浏览器滚轮兼容
 	function MouseWheel(ele, fun) {
 		var agent = window.navigator.userAgent;
 		if(agent.indexOf("Firefox") != -1) {
