@@ -2,11 +2,21 @@ $(function() {
 	// 图片预加载.
 	var obj = {
 		arr: ["img/bg.jpg"],
+		loading:loading,
 		loaded: loadeds
 	}
 	load(obj);
-
+	function loading(){
+		$("<div class='load'/>").css({
+			width:"100%",
+			height:$(window).height(),
+			position:"absolute",
+			top:0,
+			background:"black"
+		}).appendTo($(".mask"))
+	}
 	function load(obj) {
+		obj.loading();
 		for(var i = 0; i < obj.arr.length; i++) {
 			var img = new Image();
 			img.src = obj.arr[i];
@@ -17,6 +27,7 @@ $(function() {
 	}
 
 	function loadeds() {
+		$(".load").remove()
 		var height = $(window).height();
 		$(".welcome").css({
 			background: "url(img/bg.jpg) no-repeat center center",
