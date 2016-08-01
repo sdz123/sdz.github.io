@@ -1,6 +1,5 @@
 $(function() {
 	// 图片预加载.
-
 	var obj = {
 		arr: ["img/bg.jpg"],
 		loaded: loadeds
@@ -22,6 +21,7 @@ $(function() {
 			background: "url(img/bg.jpg) no-repeat center center",
 			backgroundSize: "cover"
 		})
+		$(".mask").addClass("animate");
 		var height = $(window).height();
 		$(".show").height(height * 5);
 		$("section").height(height);
