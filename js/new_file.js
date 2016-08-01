@@ -18,7 +18,7 @@ $(function() {
 
 	function loaded() {
 		$(".welcome").css("background", "url(img/bg.jpg) no-repeat")
-	}
+	
 	var height = $(window).height();
 $(".show").height(height * 5);
 $("section").height(height);	//处理浏览器滚轮兼容
@@ -90,5 +90,6 @@ $("section").height(height);	//处理浏览器滚轮兼容
 			}
 		}
 	}
-	$(".welcome p").css("margin-top", (height - 100) / 2)
+	$(".welcome p").css("margin-top", (height - 100) / 2);
+	}
 })
