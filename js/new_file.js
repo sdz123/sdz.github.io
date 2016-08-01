@@ -12,7 +12,6 @@ $(function() {
 			var img = new Image();
 			img.src = obj.arr[i];
 			img.onload = function() {
-				
 				obj.loaded();
 			}
 		}
