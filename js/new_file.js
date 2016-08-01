@@ -20,13 +20,17 @@ $(function() {
 		var height = $(window).height();
 		$(".welcome").css({
 			background: "url(img/bg.jpg) no-repeat center center",
-			backgroundSize: "cover"
+			backgroundSize: "cover",
+
 		})
-		$(".welcom").css({
-			marginTop:height/2-$(".welcom").height()/2
+		$(".welcom-word").css({
+
+			marginTop: height / 2 - $(".welcom").height() / 2,
+			opacity: "1"
+
 		})
 		$(".mask").addClass("animate");
-		
+
 		$(".show").height(height * 5);
 		$("section").height(height);
 		//处理浏览器滚轮兼容
