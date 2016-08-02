@@ -159,17 +159,15 @@ $(function() {
 		//侧边栏锚点跳转
 		$(".slider-list li").click(function(){
 			$(".show").animate({
-				top:-($(this).index()+1)*$("section").height()
+				top:-$(this).index()*$("section").height()
 			},500,function(){
 			top = $(".show")[0].offsetTop;
 		})
 		})
 		$(".slider-list li").on("touchstart",function(){
 			$(".show").animate({
-				top:-($(this).index()+1)*$("section").height()
-			},500,function(){
-				top = $(".show")[0].offsetTop;
-			})
+				top:-$(this).index()*$("section").height()
+			},500)
 		})
 	}
 })
