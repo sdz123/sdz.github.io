@@ -59,15 +59,16 @@ $(function() {
 		MouseWheel($(".show")[0], fun);
 		var top = null;
 		var swit = true;
-
 		function fun(bol) {
+			
 			if(swit) {
 				if(bol) {
+					$(".mask").fadeOut()
 					$(".nav").animate({
 						top: 0
 					}, {
 						easing: "easeOutBounce",
-						duration: 500
+						duration: 1000
 					})
 					if(Math.abs($(".show")[0].offsetTop) >= height * 4) {
 						$(".show").css("top", -height * 4)
@@ -75,31 +76,33 @@ $(function() {
 						top -= height;
 						$(".show").animate({
 							top: top
-						}, 500)
+						}, 1000)
 					}
 					swit = !swit;
 					setTimeout(function() {
 						swit = !swit;
-					}, 500)
+					}, 1000)
+
 				} else {
 					if(Math.abs($(".show")[0].offsetTop) <= height) {
+							$(".mask").fadeIn()
 						$(".nav").animate({
 							top: -55
-						}, 500)
+						}, 1000)
 						top = 0;
 						$(".show").animate({
 							top: 0
-						}, 500)
+						}, 1000)
 					} else {
 						top += height;
 						$(".show").animate({
 							top: top
-						}, 500)
+						}, 1000)
 					}
 					swit = !swit;
 					setTimeout(function() {
 						swit = !swit;
-					}, 500)
+					}, 1000)
 
 				}
 			}
