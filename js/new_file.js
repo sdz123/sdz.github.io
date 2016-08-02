@@ -133,12 +133,43 @@ $(function() {
 				duration: 800
 			})
 		})
-		//关闭侧边栏
-		$(".back").click(function(){
+
+		$(".icon-menu").on("touchstart", function(e) {
+				e.cancelBubble = true;
+				$(".sliderbar").animate({
+					right: 0
+				}, {
+					easing: "easeOutBounce",
+					duration: 800
+				})
+			})
+			//关闭侧边栏
+		$(".back").click(function() {
 			$(".sliderbar").animate({
 				right: "-3em"
-			},500)
+			}, 500)
 		})
-
+		$(".back").on("touchstart", function(e) {
+			 e.preventDefault();
+			e.cancelBubble = true;
+			$(".sliderbar").animate({
+				right: "-3em"
+			}, 500)
+		})
+		//侧边栏锚点跳转
+		$(".slider-list li").click(function(){
+			$(".show").animate({
+				top:-($(this).index()+1)*$("section").height()
+			},500,function(){
+			top = $(".show")[0].offsetTop;
+		})
+		})
+		$(".slider-list li").on("touchstart",function(){
+			$(".show").animate({
+				top:-($(this).index()+1)*$("section").height()
+			},500,function(){
+				top = $(".show")[0].offsetTop;
+			})
+		})
 	}
 })
