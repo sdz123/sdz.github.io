@@ -59,16 +59,17 @@ $(function() {
 		MouseWheel($(".show")[0], fun);
 		var top = null;
 		var swit = true;
+
 		function fun(bol) {
-			
 			if(swit) {
 				if(bol) {
-					$(".mask").fadeOut()
+					$(".mask").css("-webkit-animation", "dis 0.8s ease forwards");
+					$(".welcom-word").fadeOut()
 					$(".nav").animate({
 						top: 0
 					}, {
 						easing: "easeOutBounce",
-						duration: 1000
+						duration: 800
 					})
 					if(Math.abs($(".show")[0].offsetTop) >= height * 4) {
 						$(".show").css("top", -height * 4)
@@ -76,36 +77,49 @@ $(function() {
 						top -= height;
 						$(".show").animate({
 							top: top
-						}, 1000)
+						}, 800)
 					}
 					swit = !swit;
 					setTimeout(function() {
 						swit = !swit;
-					}, 1000)
+					}, 800)
 
 				} else {
 					if(Math.abs($(".show")[0].offsetTop) <= height) {
-							$(".mask").fadeIn()
+						$(".mask").css("-webkit-animation", "_dis 2s ease forwards")
+						$(".welcom-word").fadeIn()
 						$(".nav").animate({
 							top: -55
-						}, 1000)
+						}, 800)
 						top = 0;
 						$(".show").animate({
 							top: 0
-						}, 1000)
+						}, 800)
 					} else {
 						top += height;
 						$(".show").animate({
 							top: top
-						}, 1000)
+						}, 800)
 					}
 					swit = !swit;
 					setTimeout(function() {
 						swit = !swit;
-					}, 1000)
+					}, 800)
 
 				}
 			}
 		}
+		//logo图标刷新页面.
+		$(".logo").click(function() {
+			window.location.reload()
+		})
+
+		$('a').click(function() {
+			$('html, body').animate({
+				scrollTop: $($.attr(this, 'href')).offset().top
+			}, 500);
+			return false;
+		});
+
 	}
 })

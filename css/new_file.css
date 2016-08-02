@@ -7,6 +7,24 @@
 	}
 }
 
+@-webkit-keyFrames dis {
+	0% {
+		background: rgba(255, 255, 255, 0.7)
+	}
+	100% {
+		background: rgba(255, 255, 255, 0)
+	}
+}
+
+@-webkit-keyFrames _dis {
+	0% {
+		background: rgba(255, 255, 255, 0)
+	}
+	100% {
+		background: rgba(255, 255, 255, 0.7)
+	}
+}
+
 html {
 	font-size: 100px;
 }
@@ -24,6 +42,47 @@ body {
 	position: fixed;
 	top: -0.55rem;
 	z-index: 1;
+}
+
+.nav-content {
+	width: 85%;
+	height: 100%;
+	margin: 0 auto;
+	/*background: yellow;*/
+}
+
+.logo {
+	background: url(../img/logo.png) no-repeat;
+	background-size: cover;
+	width: 0.35rem;
+	height: 0.35rem;
+	margin-top: 0.1rem;
+	float: left;
+	cursor: pointer;
+}
+
+.list {
+	float: right;
+	margin-top: 0.16rem;
+	margin-right: 3%;
+}
+
+.list li {
+	float: left;
+	font-size: 0.15rem;
+	color: white;
+	width: 1rem;
+	cursor: pointer;
+}
+
+.list li a {
+	text-decoration: none;
+	color: white;
+	transition: ease 0.2s;
+}
+
+.list li a:hover {
+	color: #666666;
 }
 
 #main {
@@ -55,6 +114,7 @@ section {
 	background: rgba(255, 255, 255, 1);
 	overflow: hidden;
 	text-align: center;
+	transition: ease 1.8s;
 }
 
 .animate {
@@ -65,6 +125,7 @@ section {
 	font-style: italic;
 	font-family: 'Georgia', "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
 }
+
 .mask p {
 	width: 100%;
 	height: 100%;
@@ -73,18 +134,20 @@ section {
 	font-size: 0.22rem;
 	line-height: 0.5rem;
 }
-.welcom-word{
+
+.welcom-word {
 	display: inline-block;
 	width: 80%;
 	text-align: center;
 	opacity: 0;
 }
-.home {
-	background: linear-gradient(to bottom, #4ECDC4 0, #19B5FE 100%);
+
+.introduce {
+	background: linear-gradient(to bottom, #1889C5 0, #8DB6CD 100%);
 }
 
 .skill {
-	background: linear-gradient(to bottom, #ED6461 0, #3F80E9 100%);
+	background: linear-gradient(to bottom, #4ECDC4 0, #19B5FE 100%);
 }
 
 .experience {
@@ -92,5 +155,5 @@ section {
 }
 
 .endpage {
-	background: linear-gradient(to bottom, #F88E8B 0, #EF5C4C 100%);
+	background: linear-gradient(to bottom, #26B1B6 0, #129DE7 100%);
 }
