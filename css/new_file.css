@@ -24,11 +24,7 @@
 		background: rgba(255, 255, 255, 0.7)
 	}
 }
-@media only screen and (max-width: 640px) {
-	.list{
-		display: none;
-	}
-}
+
 html {
 	font-size: 100px;
 }
@@ -76,26 +72,25 @@ body {
 	color: white;
 	width: 1rem;
 	cursor: pointer;
-}
-
-.list li a {
-	text-decoration: none;
-	color: white;
 	transition: ease 0.2s;
 }
 
-.list li a:hover {
+
+.list li:hover {
 	color: #666666;
 }
 .icon-menu{
 	position:fixed;
-	right: 0.4em;
+	right: 0.2em;
 	top:0.14em;
 	background: rgba(255,255,255,0.8);
 	width: 0.3em;
 	height: 0.27em;
 	border-radius: 0.02rem;
+	z-index: 2;
+	display: none;
 }
+
 #main {
 	width: 100%;
 	height: 100%;
@@ -136,7 +131,14 @@ section {
 	font-style: italic;
 	font-family: 'Georgia', "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
 }
-
+.icon-menu span{
+	display: block;
+	width: 0.2rem;
+	height: 0.02rem;
+	background: #151515;
+	opacity: 0.6;
+	margin: 0.0525rem auto 0 auto;
+}
 .mask p {
 	width: 100%;
 	height: 100%;
@@ -167,4 +169,16 @@ section {
 
 .endpage {
 	background: linear-gradient(to bottom, #26B1B6 0, #129DE7 100%);
+}
+@media only screen and (max-width: 640px) {
+	.icon-menu{
+		display: block;
+	}
+	.list{
+		display: none;
+	}
+	.logo{
+		position: fixed;
+		top: 0.02rem;
+	}
 }

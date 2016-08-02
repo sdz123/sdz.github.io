@@ -1,5 +1,5 @@
 $(function() {
-	// 图片预加载.
+		// 图片预加载.
 	var obj = {
 		arr: ["img/bg.jpg"],
 		loaded: loadeds
@@ -35,6 +35,7 @@ $(function() {
 
 		$(".show").height(height * 5);
 		$("section").height(height);
+		var top = 0;
 		//处理浏览器滚轮兼容
 		function MouseWheel(ele, fun) {
 			var agent = window.navigator.userAgent;
@@ -57,12 +58,13 @@ $(function() {
 			}
 		}
 		MouseWheel($(".show")[0], fun);
-		var top = null;
+
 		var swit = true;
 
 		function fun(bol) {
 			if(swit) {
 				if(bol) {
+					//向下滚.
 					$(".mask").css("-webkit-animation", "dis 0.8s ease forwards");
 					$(".welcom-word").fadeOut()
 					$(".nav").animate({
@@ -85,9 +87,10 @@ $(function() {
 					}, 800)
 
 				} else {
+					//向上滚
 					if(Math.abs($(".show")[0].offsetTop) <= height) {
-						$(".mask").css("-webkit-animation", "_dis 2s ease forwards")
-						$(".welcom-word").fadeIn()
+						$(".mask").css("-webkit-animation", "_dis 2s ease forwards");
+						$(".welcom-word").fadeIn();
 						$(".nav").animate({
 							top: -55
 						}, 800)
@@ -113,12 +116,12 @@ $(function() {
 		$(".logo").click(function() {
 			window.location.reload()
 		})
-
-		$('a').click(function() {
-			$('html, body').animate({
-				scrollTop: $($.attr(this, 'href')).offset().top
-			}, 500);
-			return false;
+		$('.list li').click(function() {
+			$('.show').animate({
+				top: -($(this).index() + 1) * $("section").height()
+			}, 500, function() {
+				top = $(".show")[0].offsetTop;
+			});
 		});
 
 	}
