@@ -2,21 +2,11 @@ $(function() {
 	// 图片预加载.
 	var obj = {
 		arr: ["img/bg.jpg"],
-		loading:loading,
 		loaded: loadeds
 	}
 	load(obj);
-	function loading(){
-		$("<div class='load'/>").css({
-			width:"100%",
-			height:$(window).height(),
-			position:"absolute",
-			top:0,
-			background:"black"
-		}).appendTo($(".mask"))
-	}
+
 	function load(obj) {
-		obj.loading();
 		for(var i = 0; i < obj.arr.length; i++) {
 			var img = new Image();
 			img.src = obj.arr[i];
@@ -27,19 +17,20 @@ $(function() {
 	}
 
 	function loadeds() {
-		$(".load").remove()
 		var height = $(window).height();
+
+		$(".welcom-word").css({
+			marginTop: height / 2 - $(".welcom-word").height() / 2,
+			opacity: "1"
+		})
+		$(".load").remove()
+
 		$(".welcome").css({
 			background: "url(img/bg.jpg) no-repeat center center",
 			backgroundSize: "cover",
 
 		})
-		$(".welcom-word").css({
 
-			marginTop: height / 2 - $(".welcom").height() / 2,
-			opacity: "1"
-
-		})
 		$(".mask").addClass("animate");
 
 		$(".show").height(height * 5);
