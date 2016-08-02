@@ -1,5 +1,5 @@
 $(function() {
-		// 图片预加载.
+	// 图片预加载.
 	var obj = {
 		arr: ["img/bg.jpg"],
 		loaded: loadeds
@@ -114,8 +114,9 @@ $(function() {
 		}
 		//logo图标刷新页面.
 		$(".logo").click(function() {
-			window.location.reload()
-		})
+				window.location.reload()
+			})
+			//锚点单页面跳转.
 		$('.list li').click(function() {
 			$('.show').animate({
 				top: -($(this).index() + 1) * $("section").height()
@@ -123,6 +124,21 @@ $(function() {
 				top = $(".show")[0].offsetTop;
 			});
 		});
+		//侧边栏
+		$(".icon-menu").click(function() {
+			$(".sliderbar").animate({
+				right: 0
+			}, {
+				easing: "easeOutBounce",
+				duration: 800
+			})
+		})
+		//关闭侧边栏
+		$(".back").click(function(){
+			$(".sliderbar").animate({
+				right: "-3em"
+			},500)
+		})
 
 	}
 })

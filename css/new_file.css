@@ -6,7 +6,14 @@
 		background: rgba(255, 255, 255, 0.7)
 	}
 }
-
+@-moz-keyFrames start {
+	0% {
+		background: rgba(255, 255, 255, 1)
+	}
+	100% {
+		background: rgba(255, 255, 255, 0.7)
+	}
+}
 @-webkit-keyFrames dis {
 	0% {
 		background: rgba(255, 255, 255, 0.7)
@@ -15,7 +22,14 @@
 		background: rgba(255, 255, 255, 0)
 	}
 }
-
+@-moz-keyFrames dis {
+	0% {
+		background: rgba(255, 255, 255, 0.7)
+	}
+	100% {
+		background: rgba(255, 255, 255, 0)
+	}
+}
 @-webkit-keyFrames _dis {
 	0% {
 		background: rgba(255, 255, 255, 0)
@@ -24,7 +38,14 @@
 		background: rgba(255, 255, 255, 0.7)
 	}
 }
-
+@-moz-keyFrames _dis {
+	0% {
+		background: rgba(255, 255, 255, 0)
+	}
+	100% {
+		background: rgba(255, 255, 255, 0.7)
+	}
+}
 html {
 	font-size: 100px;
 }
@@ -72,7 +93,9 @@ body {
 	color: white;
 	width: 1rem;
 	cursor: pointer;
-	transition: ease 0.2s;
+	-webkit-transition: ease 0.2s;
+	-moz-transition: ease 0.2s;
+	
 }
 
 
@@ -120,11 +143,15 @@ section {
 	background: rgba(255, 255, 255, 1);
 	overflow: hidden;
 	text-align: center;
-	transition: ease 1.8s;
+	-webkit-transition: ease 1.8s;
+	-moz-transition: ease 1.8s;
+	
 }
 
 .animate {
 	-webkit-animation: start ease 5s forwards;
+	-moz-animation: start ease 5s forwards;
+	
 }
 
 .mask span {
@@ -138,6 +165,9 @@ section {
 	background: #151515;
 	opacity: 0.6;
 	margin: 0.0525rem auto 0 auto;
+	-webkit-transition: all ease 0.5s;
+	-moz-transition: all ease 0.5s;
+	
 }
 .mask p {
 	width: 100%;
@@ -170,7 +200,67 @@ section {
 .endpage {
 	background: linear-gradient(to bottom, #26B1B6 0, #129DE7 100%);
 }
+.icon-menu:hover span{
+	position: absolute;
+	margin: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.icon-menu:hover .icon-f{
+	width: 0.15rem;
+	-webkit-transform: translateX(-0.04rem) translateY(0.07rem) rotateZ(45deg);
+	-moz-transform: translateX(-0.04rem) translateY(0.07rem) rotateZ(45deg);
+}
+.icon-menu:hover .icon-t{
+	width: 0.15rem;
+	-webkit-transform: translateX(-0.04rem) translateY(-0.07rem) rotateZ(-45deg);
+	-moz-transform: translateX(-0.04rem) translateY(-0.07rem) rotateZ(-45deg);
+	
+}
+.sliderbar{
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background:#42474B;
+	width: 3rem;
+	z-index: 1;
+	right: -3rem;
+}
+.back{
+	width: 0.4rem;
+	height: 0.4rem;
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+}
+.back span{
+	position: absolute;
+	margin: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 0.3rem;
+	height: 0.02rem;
+	background: #ccc;
+}
+.back-f{
+	-webkit-transform: rotateZ(45deg);
+	-moz-transform: rotateZ(45deg);
+}
+.back-s{
+	-webkit-transform: rotateZ(-45deg);
+	-moz-transform: rotateZ(-45deg);
+}
 @media only screen and (max-width: 640px) {
+	html{
+		font-size: 80px;
+	}
 	.icon-menu{
 		display: block;
 	}
