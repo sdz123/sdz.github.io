@@ -89,9 +89,9 @@ body {
 }
 .icon-menu{
 	position:fixed;
-	right: 0.3em;
+	right: 0.4em;
 	top:0.14em;
-	background: yellowgreen;
+	background: rgba(255,255,255,0.8);
 	width: 0.3em;
 	height: 0.27em;
 	border-radius: 0.02rem;
