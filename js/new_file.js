@@ -4,7 +4,6 @@ $(function() {
 		arr: ["img/bg.jpg"],
 		loaded: loadeds
 	}
-	load(obj);
 
 	function load(obj) {
 		for(var i = 0; i < obj.arr.length; i++) {
@@ -15,24 +14,20 @@ $(function() {
 			}
 		}
 	}
+	load(obj);
 
 	function loadeds() {
 		var height = $(window).height();
-
 		$(".welcom-word").css({
 			marginTop: height / 2 - $(".welcom-word").height() / 2,
 			opacity: "1"
 		})
 		$(".load").remove()
-
 		$(".welcome").css({
 			background: "url(img/bg.jpg) no-repeat center center",
 			backgroundSize: "cover",
-
 		})
-
 		$(".mask").addClass("animate");
-
 		$(".show").height(height * 5);
 		$("section").height(height);
 		var top = 0;
@@ -58,7 +53,6 @@ $(function() {
 			}
 		}
 		MouseWheel($(".show")[0], fun);
-
 		var swit = true;
 
 		function fun(bol) {
@@ -139,7 +133,7 @@ $(function() {
 				$(".sliderbar").animate({
 					right: 0
 				}, {
-					easing: "easeOutBounce",
+					easing: "easeOutSine",
 					duration: 800
 				})
 			})
@@ -150,24 +144,63 @@ $(function() {
 			}, 500)
 		})
 		$(".back").on("touchstart", function(e) {
-			 e.preventDefault();
-			e.cancelBubble = true;
-			$(".sliderbar").animate({
-				right: "-3em"
-			}, 500)
-		})
-		//侧边栏锚点跳转
-		$(".slider-list li").click(function(){
+				e.preventDefault();
+				e.cancelBubble = true;
+				$(".sliderbar").animate({
+					right: "-3em"
+				}, 500)
+			})
+			//侧边栏锚点跳转
+		$(".slider-list li").click(function() {
 			$(".show").animate({
-				top:-$(this).index()*$("section").height()
-			},500,function(){
-			top = $(".show")[0].offsetTop;
+				top: -$(this).index() * $("section").height()
+			}, 500, function() {
+				top = $(".show")[0].offsetTop;
+			})
 		})
-		})
-		$(".slider-list li").on("touchstart",function(){
-			$(".show").animate({
-				top:-$(this).index()*$("section").height()
-			},500)
+		$(".slider-list li").on("touchstart", function() {
+				$(".show").animate({
+					top: -$(this).index() * $("section").height()
+				}, 500)
+			})
+			//移动端滚屏事件.
+		touch.on($(".show"), "swipe", function(e) {
+			if(e.direction == "down") {
+				if(Math.abs($(".show")[0].offsetTop) <= height) {
+					$(".mask").css("-webkit-animation", "_dis 2s ease forwards");
+					$(".welcom-word").fadeIn();
+					$(".nav").animate({
+						top: -55
+					}, 800)
+					top = 0;
+					$(".show").animate({
+						top: 0
+					}, 800)
+				} else {
+					top += height;
+					$(".show").animate({
+						top: top
+					}, 800)
+				}
+			}
+			if(e.direction == "up") {
+				$(".mask").css("-webkit-animation", "dis 0.8s ease forwards");
+				$(".welcom-word").fadeOut()
+				$(".nav").animate({
+					top: 0
+				}, {
+					easing: "easeOutBounce",
+					duration: 800
+				})
+				if(Math.abs($(".show")[0].offsetTop) >= height * 4) {
+					$(".show").css("top", -height * 4)
+				} else {
+					top -= height;
+					$(".show").animate({
+						top: top
+					}, 800)
+				}
+			}
 		})
 	}
 })
