@@ -165,6 +165,7 @@ $(function() {
 			})
 			//移动端滚屏事件.
 		touch.on($(".show"), "swipe", function(e) {
+			e.preventDefault();
 			if(e.direction == "down") {
 				if(Math.abs($(".show")[0].offsetTop) <= height) {
 					$(".mask").css("-webkit-animation", "_dis 2s ease forwards");
