@@ -164,6 +164,9 @@ $(function() {
 				}, 500)
 			})
 			//移动端滚屏事件.
+		$("body")[0].addEventListener("touchstart", function(e) {
+			e.preventDefault();
+		})
 		touch.on($(".show"), "swipe", function(e) {
 			e.preventDefault();
 			if(e.direction == "down") {
