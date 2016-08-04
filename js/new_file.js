@@ -106,11 +106,16 @@ $(function() {
 				}
 			}
 		}
+
 		//logo图标刷新页面.
 		$(".logo").click(function() {
-				window.location.reload()
-			})
-			//锚点单页面跳转.
+			window.location.reload()
+		})
+		$(".logo")[0].addEventListener("touchstart", function() {
+			window.location.reload()
+		})
+
+		//锚点单页面跳转.
 		$('.list li').click(function() {
 			$('.show').animate({
 				top: -($(this).index() + 1) * $("section").height()
@@ -118,6 +123,7 @@ $(function() {
 				top = $(".show")[0].offsetTop;
 			});
 		});
+
 		//侧边栏
 		$(".icon-menu").click(function() {
 			$(".sliderbar").animate({
@@ -127,30 +133,31 @@ $(function() {
 				duration: 800
 			})
 		})
-
 		$(".icon-menu").on("touchstart", function(e) {
-				e.cancelBubble = true;
-				$(".sliderbar").animate({
-					right: 0
-				}, {
-					easing: "easeOutSine",
-					duration: 800
-				})
+			e.cancelBubble = true;
+			$(".sliderbar").animate({
+				right: 0
+			}, {
+				easing: "easeOutSine",
+				duration: 800
 			})
-			//关闭侧边栏
+		})
+
+		//关闭侧边栏
 		$(".back").click(function() {
 			$(".sliderbar").animate({
 				right: "-3em"
 			}, 500)
 		})
 		$(".back").on("touchstart", function(e) {
-				e.preventDefault();
-				e.cancelBubble = true;
-				$(".sliderbar").animate({
-					right: "-3em"
-				}, 500)
-			})
-			//侧边栏锚点跳转
+			e.preventDefault();
+			e.cancelBubble = true;
+			$(".sliderbar").animate({
+				right: "-3em"
+			}, 500)
+		})
+
+		//侧边栏锚点跳转
 		$(".slider-list li").click(function() {
 			$(".show").animate({
 				top: -$(this).index() * $("section").height()
@@ -159,50 +166,69 @@ $(function() {
 			})
 		})
 		$(".slider-list li").on("touchstart", function() {
-				$(".show").animate({
-					top: -$(this).index() * $("section").height()
-				}, 500)
+			$(".show").animate({
+				top: -$(this).index() * $("section").height()
+			}, 500, function() {
+				top = $(".show")[0].offsetTop;
 			})
-			//移动端滚屏事件.
+		})
+
+		//移动端滚屏事件.
 		$("body")[0].addEventListener("touchstart", function(e) {
 			e.preventDefault();
 		})
+		var touchbol = true;
 		touch.on($(".show"), "swipe", function(e) {
 			e.preventDefault();
-			if(e.direction == "down") {
-				if(Math.abs($(".show")[0].offsetTop) <= height) {
-					$(".mask").css("-webkit-animation", "_dis 2s ease forwards");
-					$(".welcom-word").fadeIn();
-					$(".nav").animate({
-						top: -55
-					}, 800)
-					top = 0;
-					$(".show").animate({
-						top: 0
-					}, 800)
-				} else {
-					top += height;
-					$(".show").animate({
-						top: top
-					}, 800)
+			if(touchbol) {
+				if(e.direction == "down") {
+					touchbol = false;
+					if(Math.abs($(".show")[0].offsetTop) <= height) {
+						$(".mask").css("-webkit-animation", "_dis 2s ease forwards");
+						$(".welcom-word").fadeIn();
+						$(".nav").animate({
+							top: -55
+						}, 800)
+						top = 0;
+						$(".show").animate({
+							top: 0
+						}, 800, function() {
+							touchbol = true;
+						})
+					} else {
+						top += height;
+						$(".show").animate({
+							top: top
+						}, 800, function() {
+							touchbol = true;
+						})
+					}
 				}
 			}
 			if(e.direction == "up") {
-				$(".mask").css("-webkit-animation", "dis 0.8s ease forwards");
-				$(".welcom-word").fadeOut()
-				$(".nav").animate({
-					top: 0
-				}, {
-					easing: "easeOutBounce",
-					duration: 800
-				})
-				if(Math.abs($(".show")[0].offsetTop) >= height * 4) {
-					$(".show").css("top", -height * 4)
-				} else {
-					top -= height;
-					$(".show").animate({
-						top: top
-					}, 800)
+				if(touchbol) {
+					touchbol = false;
+					$(".mask").css("-webkit-animation", "dis 0.8s ease forwards");
+					$(".welcom-word").fadeOut()
+					$(".nav").animate({
+						top: 0
+					}, {
+						easing: "easeOutBounce",
+						duration: 800
+					}, function() {
+						touchbol = true;
+					})
+					if(Math.abs($(".show")[0].offsetTop) >= height * 4) {
+						$(".show").css("top", -height * 4)
+						touchbol = true;
+					} else {
+						top -= height;
+						$(".show").animate({
+							top: top
+						}, 800, function() {
+							touchbol = true;
+						})
+					}
 				}
 			}
 		})
