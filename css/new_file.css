@@ -299,9 +299,9 @@ section {
 
 /*自我介绍页主体*/
 .introduce-content{
-	width:80%;
+	width:60%;
 	height: 85%;
-	background: orange;
+	/*background: orange;*/
 	margin:auto;
 	position: absolute;
 	top: 0;
@@ -312,7 +312,7 @@ section {
 .head-img{
 	width: 100%;
 	height: 20%;
-	background: red;
+	/*background: red;*/
 	text-align: center;
 }
 .img{
@@ -324,9 +324,38 @@ section {
 	-ms-border-radius: 50%;
 	-moz-border-radius: 50%;
 }
+.int{
+	padding-top: 10%;
+	font-size: 0.15rem;
+	padding-left: 5%;
+	text-align: left;
+	color: white;
+}
+.int li{
+	margin-bottom: 0.15rem;
+}
+.int li a {
+	text-decoration: none;
+	color: white;
+}
+.int li span{
+	display: inline-block;
+	margin-left: 0;
+	text-align:right;
+	width: 0.6rem;
+	height: 0.2rem;
+}
+.introduce-content-left{
+	width: 35%;
+	float: left;
+	background: cyan;
+}
 
-
-
+.introduce-content-right{
+	width: 55%;
+	float: right;
+	background: green;
+}
 
 
 

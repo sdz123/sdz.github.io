@@ -110,7 +110,6 @@ $(function() {
 				}
 			}
 		}
-
 		//logo图标刷新页面.
 		$(".logo").click(function() {
 			window.location.reload()
@@ -127,7 +126,6 @@ $(function() {
 				top = $(".show")[0].offsetTop;
 			});
 		});
-
 		//侧边栏
 		$(".icon-menu").click(function() {
 			$(".sliderbar").animate({
