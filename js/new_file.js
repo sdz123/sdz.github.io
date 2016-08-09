@@ -39,15 +39,12 @@ $(function() {
 			} else {
 				ele.onmousewheel = wheel;
 			}
-
 			function wheel(ev) {
 				var down = false;
-				if(ev.detail > 0) {
+				if(ev.detail > 0 || ev.wheelDelta < 0 ) {
 					down = true;
 				}
-				if(ev.wheelDelta < 0) {
-					down = true;
-				}
+				
 				fun(down, ele, ev);
 				return false;
 			}
