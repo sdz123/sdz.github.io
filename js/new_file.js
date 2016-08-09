@@ -1,22 +1,29 @@
 $(function() {
 	// 图片预加载.
 	var obj = {
-		arr: ["img/bg.jpg"],
+		arr: ["img/bg.jpg", "img/FullSizeRender.jpg"],
 		loaded: loadeds
 	}
+	var index = 0;
 
 	function load(obj) {
 		for(var i = 0; i < obj.arr.length; i++) {
 			var img = new Image();
 			img.src = obj.arr[i];
 			img.onload = function() {
-				obj.loaded();
+				index++;
+				if(index == obj.arr.length) {
+					obj.loaded();
+				}
 			}
 		}
 	}
 	load(obj);
 
 	function loadeds() {
+		$(".img").css("background",'url("img/FullSizeRender.jpg")');
+		$(".img").css("backgroundSize",'cover');
+		
 		var height = $(window).height();
 		$(".welcom-word").css({
 			marginTop: height / 2 - $(".welcom-word").height() / 2,
@@ -39,19 +46,19 @@ $(function() {
 			} else {
 				ele.onmousewheel = wheel;
 			}
+
 			function wheel(ev) {
 				var down = false;
-				if(ev.detail > 0 || ev.wheelDelta < 0 ) {
+				if(ev.detail > 0 || ev.wheelDelta < 0) {
 					down = true;
 				}
-				 
+
 				fun(down, ele, ev);
 				return false;
 			}
 		}
 		MouseWheel($(".show")[0], fun);
 		var swit = true;
-
 		function fun(bol) {
 			if(swit) {
 				if(bol) {
