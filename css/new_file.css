@@ -296,23 +296,7 @@ section {
 }
 
 
-/*响应式*/
 
-@media only screen and (max-width: 640px) {
-	html {
-		font-size: 80px;
-	}
-	.icon-menu {
-		display: block;
-	}
-	.list {
-		display: none;
-	}
-	.logo {
-		position: fixed;
-		top: 0.02rem;
-	}
-}
 /*自我介绍页主体*/
 .introduce-content{
 	width:80%;
@@ -335,11 +319,37 @@ section {
 	display: inline-block;
 	width: 2.38rem;
 	height: 2.38rem;
-	background: url(../img/FullSizeRender.jpg);
+	/*background: url(../img/FullSizeRender.jpg);*/
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	-ms-border-radius: 50%;
 	-moz-border-radius: 50%;
 	background-size:cover ;
 	transform: rotateZ(-15deg);
+}
+
+
+
+
+
+
+
+
+
+/*响应式*/
+
+@media only screen and (max-width: 640px) {
+	html {
+		font-size: 80px;
+	}
+	.icon-menu {
+		display: block;
+	}
+	.list {
+		display: none;
+	}
+	.logo {
+		position: fixed;
+		top: 0.02rem;
+	}
 }

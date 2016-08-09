@@ -44,7 +44,7 @@ $(function() {
 				if(ev.detail > 0 || ev.wheelDelta < 0 ) {
 					down = true;
 				}
-				
+				 
 				fun(down, ele, ev);
 				return false;
 			}
