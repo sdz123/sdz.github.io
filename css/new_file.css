@@ -309,6 +309,7 @@ section {
 	left: 0;
 	right: 0;
 	bottom: 0;
+	/*background: purple;*/
 }
 .head-img{
 	width: 100%;
@@ -364,7 +365,11 @@ section {
 
 
 /*响应式*/
-
+@media only screen and (max-width: 800px) {
+	.introduce-content{
+		width: 6rem;
+	}
+}
 @media only screen and (max-width: 640px) {
 	html {
 		font-size: 80px;
@@ -379,4 +384,15 @@ section {
 		position: fixed;
 		top: 0.02rem;
 	}
+}
+@media only screen and (max-width: 490px) {
+	.introduce-content-left li{
+		margin-left: 1.3rem;
+	}
+	.int{
+		width: 80%;
+		float: none;
+		display: inline-block;
+}
+
 }
