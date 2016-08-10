@@ -386,11 +386,20 @@ section {
 	}
 }
 @media only screen and (max-width: 490px) {
+	.introduce-content{
+		width: 100%;
+	}
 	.introduce-content-left li{
-		margin-left: 1.3rem;
+		width: 2.5rem;
+		margin: 0 auto;
+	}
+	.introduce-content-right{
+		width: 3rem;
+		margin: 0 auto;
 	}
 	.int{
-		width: 80%;
+		padding-top: 0.3rem;
+		width: 60%;
 		float: none;
 		display: inline-block;
 }
