@@ -412,7 +412,8 @@ section {
 }
 @media only screen and (max-width: 490px) {
 	.introduce-content{
-		width: 100%;
+		position: absolute;
+		top: 0.55rem;
 	}
 	.introduce-content-left{
 		padding-top: 0.1rem;
