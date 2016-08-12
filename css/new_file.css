@@ -318,13 +318,9 @@ section {
 .introduce-content{
 	width:8rem;
 	height: 85%;
-	/*background: orange;*/
-	margin:auto;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
+	margin:0.55rem auto;
+	
+	
 }
 .head-img{
 	width: 100%;
@@ -411,10 +407,7 @@ section {
 	}
 }
 @media only screen and (max-width: 490px) {
-	.introduce-content{
-		position: absolute;
-		top: 0.55rem;
-	}
+
 	.introduce-content-left{
 		padding-top: 0.1rem;
 	}

@@ -24,7 +24,7 @@ $(function() {
 		$(".img").css("background",'url("img/FullSizeRender.jpg")');
 		$(".img").css("backgroundSize",'cover');
 		$(".img").css("-moz-backgroundSize",'cover');
-		
+		$(".introduce-content").css("right",$(".introduce-content").width()/2)
 
 		var height = $(window).height();
 		$(".introduce-content").css("height",height*.8)
