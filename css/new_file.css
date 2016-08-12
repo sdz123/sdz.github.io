@@ -137,6 +137,7 @@ section {
 	width: 100%;
 	overflow: hidden;
 	position: relative;
+	text-align: center;
 }
 
 .welcome {
@@ -316,10 +317,11 @@ section {
 
 /*自我介绍页主体*/
 .introduce-content{
-	width:8rem;
-	height: 85%;
+	/*width:30%;
+	/*height: 85%;*/*/
+	/*background: yellow;*/
 	margin:0.55rem auto;
-	
+	display: inline-block;
 	
 }
 .head-img{
@@ -407,7 +409,10 @@ section {
 	}
 }
 @media only screen and (max-width: 490px) {
-
+	.introduce-content{
+		width: 4rem;
+		margin-top: 0.55rem;
+	}
 	.introduce-content-left{
 		padding-top: 0.1rem;
 	}
