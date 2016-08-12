@@ -100,6 +100,8 @@ body {
 	cursor: pointer;
 	-webkit-transition: ease 0.2s;
 	-moz-transition: ease 0.2s;
+	-ms-transition: ease 0.2s;
+	
 }
 
 .list li:hover {
@@ -150,6 +152,8 @@ section {
 	text-align: center;
 	-webkit-transition: ease 1.8s;
 	-moz-transition: ease 1.8s;
+	-ms-transition: ease 1.8s;
+	
 }
 
 .animate {
@@ -171,6 +175,8 @@ section {
 	margin: 0.0525rem auto 0 auto;
 	-webkit-transition: all ease 0.5s;
 	-moz-transition: all ease 0.5s;
+	-ms-transition: all ease 0.5s;
+	
 }
 
 .mask p {
@@ -218,12 +224,16 @@ section {
 	width: 0.15rem;
 	-webkit-transform: translateX(-0.04rem) translateY(0.07rem) rotateZ(45deg);
 	-moz-transform: translateX(-0.04rem) translateY(0.07rem) rotateZ(45deg);
+	-ms-transform: translateX(-0.04rem) translateY(0.07rem) rotateZ(45deg);
+	
 }
 
 .icon-menu:hover .icon-t {
 	width: 0.15rem;
 	-webkit-transform: translateX(-0.04rem) translateY(-0.07rem) rotateZ(-45deg);
 	-moz-transform: translateX(-0.04rem) translateY(-0.07rem) rotateZ(-45deg);
+	-ms-transform: translateX(-0.04rem) translateY(-0.07rem) rotateZ(-45deg);
+	
 }
 
 
@@ -264,11 +274,15 @@ section {
 .back-f {
 	-webkit-transform: rotateZ(45deg);
 	-moz-transform: rotateZ(45deg);
+	-ms-transform: rotateZ(45deg);
+	
 }
 
 .back-s {
 	-webkit-transform: rotateZ(-45deg);
 	-moz-transform: rotateZ(-45deg);
+	-ms-transform: rotateZ(-45deg);
+	
 }
 
 
@@ -286,6 +300,8 @@ section {
 	cursor: pointer;
 	-webkit-transition: all ease 0.5s;
 	-moz-transition: all ease 0.5s;
+	-ms-transition: all ease 0.5s;
+	
 	border-left: 2px solid transparent;
 	padding-left:0.2rem ;
 
@@ -309,11 +325,10 @@ section {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	/*background: purple;*/
 }
 .head-img{
 	width: 100%;
-	height: 20%;
+	height: 1.2rem;
 	/*background: red;*/
 	text-align: center;
 }
@@ -324,7 +339,7 @@ section {
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	-ms-border-radius: 50%;
-	-moz-border-radius: 50%;
+	border-radius: 50%;
 }
 .int{
 	padding-top: 10%;
@@ -359,8 +374,18 @@ section {
 	float: right;
 	/*background: green;*/
 }
-
-
+/*技能页内部样式*/
+.skill-banner{
+	width: 60%;
+	height: 60%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	background: rgba(232,231,225,.82);
+}
 
 
 
@@ -389,16 +414,22 @@ section {
 	.introduce-content{
 		width: 100%;
 	}
+	.introduce-content-left{
+		padding-top: 0.1rem;
+	}
 	.introduce-content-left li{
 		width: 2.5rem;
 		margin: 0 auto;
 	}
 	.introduce-content-right{
+		
+		padding-top: 0;
 		width: 3rem;
 		margin: 0 auto;
+		position: relative;
+		bottom: 0;
 	}
 	.int{
-		padding-top: 0.3rem;
 		width: 60%;
 		float: none;
 		display: inline-block;

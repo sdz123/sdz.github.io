@@ -23,8 +23,12 @@ $(function() {
 	function loadeds() {
 		$(".img").css("background",'url("img/FullSizeRender.jpg")');
 		$(".img").css("backgroundSize",'cover');
+		$(".img").css("-moz-backgroundSize",'cover');
 		
+
 		var height = $(window).height();
+		$(".introduce-content").css("height",height*.8)
+		
 		$(".welcom-word").css({
 			marginTop: height / 2 - $(".welcom-word").height() / 2,
 			opacity: "1"
