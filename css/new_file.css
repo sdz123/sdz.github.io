@@ -363,14 +363,14 @@ section {
 .introduce-content-left{
 	width: 55%;
 	float: left;
-	/*background: cyan;*/
+	background: cyan;
 }
 	
 .introduce-content-right{
 	text-indent: 0.32rem;
 	width: 35%;
 	float: right;
-	/*background: green;*/
+	background: green;
 }
 /*技能页内部样式*/
 .skill-banner{
