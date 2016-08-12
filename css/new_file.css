@@ -276,14 +276,12 @@ section {
 	-webkit-transform: rotateZ(45deg);
 	-moz-transform: rotateZ(45deg);
 	-ms-transform: rotateZ(45deg);
-	
 }
 
 .back-s {
 	-webkit-transform: rotateZ(-45deg);
 	-moz-transform: rotateZ(-45deg);
 	-ms-transform: rotateZ(-45deg);
-	
 }
 
 
@@ -302,7 +300,6 @@ section {
 	-webkit-transition: all ease 0.5s;
 	-moz-transition: all ease 0.5s;
 	-ms-transition: all ease 0.5s;
-	
 	border-left: 2px solid transparent;
 	padding-left:0.2rem ;
 
@@ -317,9 +314,6 @@ section {
 
 /*自我介绍页主体*/
 .introduce-content{
-	/*width:30%;
-	/*height: 85%;*/*/
-	/*background: yellow;*/
 	margin:0.55rem auto;
 	display: inline-block;
 	
@@ -363,14 +357,14 @@ section {
 .introduce-content-left{
 	width: 55%;
 	float: left;
-	background: cyan;
+	/*background: cyan;*/
 }
 	
 .introduce-content-right{
 	text-indent: 0.32rem;
 	width: 35%;
 	float: right;
-	background: green;
+	/*background: green;*/
 }
 /*技能页内部样式*/
 .skill-banner{
@@ -421,12 +415,8 @@ section {
 		margin: 0 auto;
 	}
 	.introduce-content-right{
-		
 		padding-top: 0;
-		width: 3rem;
-		margin: 0 auto;
-		position: relative;
-		bottom: 0;
+		margin-top: -0.03rem;
 	}
 	.int{
 		width: 60%;
