@@ -340,7 +340,11 @@ section {
 .introduce-content{
 	margin:0.55rem auto;
 	display: inline-block;
+<<<<<<< HEAD
 	max-width: 8rem;
+=======
+	
+>>>>>>> origin/gh-pages
 }
 .head-img{
 	width: 100%;
@@ -391,6 +395,7 @@ section {
 	/*background: green;*/
 }
 /*技能页内部样式*/
+<<<<<<< HEAD
 .skill-content{
 	background: rgba(232,231,225,.62);
 	position: absolute;
@@ -406,6 +411,21 @@ section {
 	font-family:"Microsoft YaHei";
 	color: white;
 }
+=======
+.skill-banner{
+	width: 60%;
+	height: 60%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	background: rgba(232,231,225,.82);
+}
+
+
+>>>>>>> origin/gh-pages
 
 /*响应式*/
 @media only screen and (max-width: 800px) {
@@ -436,9 +456,12 @@ section {
 	}
 	.introduce-content-left{
 		padding-top: 0.1rem;
+<<<<<<< HEAD
         margin-top:-0.3rem; 
 
         
+=======
+>>>>>>> origin/gh-pages
 	}
 	.introduce-content-left li{
 		width: 2.5rem;
@@ -446,8 +469,12 @@ section {
 	}
 	.introduce-content-right{
 		padding-top: 0;
+<<<<<<< HEAD
 		margin-top: -0.2frem;
 
+=======
+		margin-top: -0.03rem;
+>>>>>>> origin/gh-pages
 	}
 	.int{
 		width: 60%;
@@ -457,6 +484,7 @@ section {
 .int li{
 		margin-bottom: 0;
 }
+<<<<<<< HEAD
 .img{
 	transform: scale(0.6);
     -moz-transform:scale(0.6);
@@ -464,5 +492,7 @@ section {
     -o-transform: scale(0.6);
 }
 
+=======
+>>>>>>> origin/gh-pages
 
 }

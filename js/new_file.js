@@ -24,11 +24,20 @@ $(function() {
 	load(obj);
 
 	function loadeds() {
+<<<<<<< HEAD
 		$("body").css("visibility", "visible")
 		$(".img").css("background", 'url("img/FullSizeRender.jpg")');
 		$(".img").css("backgroundSize", 'cover');
+=======
+		$(".img").css("background",'url("img/FullSizeRender.jpg")');
+		$(".img").css("backgroundSize",'cover');
+		$(".img").css("-moz-backgroundSize",'cover');
+		$(".introduce-content").css("right",$(".introduce-content").width()/2)
+>>>>>>> origin/gh-pages
 
 		var height = $(window).height();
+		$(".introduce-content").css("height",height*.8)
+		
 		$(".welcom-word").css({
 			marginTop: height / 2 - $(".welcom-word").height() / 2,
 			opacity: "1"
