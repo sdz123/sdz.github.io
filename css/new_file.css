@@ -60,6 +60,15 @@ body {
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
+	visibility:hidden;
+}
+._loa{
+	width: 100%;
+	height: 100%;
+	background: black;
+	position: absolute;
+	z-index: 1000;
+	display: none;
 }
 .nav {
 	width: 100%;
@@ -100,6 +109,8 @@ body {
 	cursor: pointer;
 	-webkit-transition: ease 0.2s;
 	-moz-transition: ease 0.2s;
+	-ms-transition: ease 0.2s;
+	
 }
 
 .list li:hover {
@@ -135,11 +146,13 @@ section {
 	width: 100%;
 	overflow: hidden;
 	position: relative;
+	text-align: center;
 }
 
 .welcome {
 	min-width: 0.5rem;
 	color: white;
+
 }
 
 .mask {
@@ -150,6 +163,8 @@ section {
 	text-align: center;
 	-webkit-transition: ease 1.8s;
 	-moz-transition: ease 1.8s;
+	-ms-transition: ease 1.8s;
+	
 }
 
 .animate {
@@ -171,6 +186,8 @@ section {
 	margin: 0.0525rem auto 0 auto;
 	-webkit-transition: all ease 0.5s;
 	-moz-transition: all ease 0.5s;
+	-ms-transition: all ease 0.5s;
+	
 }
 
 .mask p {
@@ -191,18 +208,32 @@ section {
 
 .introduce {
 	background: linear-gradient(to bottom, #1889C5 0, #8DB6CD 100%);
+	-ms-background: linear-gradient(to bottom, #1889C5 0, #8DB6CD 100%);
+	-moz-background: linear-gradient(to bottom, #1889C5 0, #8DB6CD 100%);
+	-o-background: linear-gradient(to bottom, #1889C5 0, #8DB6CD 100%);
 }
 
 .skill {
 	background: linear-gradient(to bottom, #4ECDC4 0, #19B5FE 100%);
+	-ms-background: linear-gradient(to bottom, #4ECDC4 0, #19B5FE 100%);
+	-moz-background: linear-gradient(to bottom, #4ECDC4 0, #19B5FE 100%);
+	-o-background: linear-gradient(to bottom, #4ECDC4 0, #19B5FE 100%);
 }
 
 .experience {
 	background: linear-gradient(to bottom, #26B1B6 0, #2DCB70 100%);
+	-moz-background: linear-gradient(to bottom, #26B1B6 0, #2DCB70 100%);
+	-ms-background: linear-gradient(to bottom, #26B1B6 0, #2DCB70 100%);
+	-o-background: linear-gradient(to bottom, #26B1B6 0, #2DCB70 100%);
+	
 }
 
 .endpage {
 	background: linear-gradient(to bottom, #26B1B6 0, #129DE7 100%);
+	-ms-background: linear-gradient(to bottom, #26B1B6 0, #129DE7 100%);
+	-moz-background: linear-gradient(to bottom, #26B1B6 0, #129DE7 100%);
+	-o-background: linear-gradient(to bottom, #26B1B6 0, #129DE7 100%);
+	
 }
 
 .icon-menu:hover span {
@@ -218,12 +249,16 @@ section {
 	width: 0.15rem;
 	-webkit-transform: translateX(-0.04rem) translateY(0.07rem) rotateZ(45deg);
 	-moz-transform: translateX(-0.04rem) translateY(0.07rem) rotateZ(45deg);
+	-ms-transform: translateX(-0.04rem) translateY(0.07rem) rotateZ(45deg);
+	
 }
 
 .icon-menu:hover .icon-t {
 	width: 0.15rem;
 	-webkit-transform: translateX(-0.04rem) translateY(-0.07rem) rotateZ(-45deg);
 	-moz-transform: translateX(-0.04rem) translateY(-0.07rem) rotateZ(-45deg);
+	-ms-transform: translateX(-0.04rem) translateY(-0.07rem) rotateZ(-45deg);
+	
 }
 
 
@@ -264,11 +299,13 @@ section {
 .back-f {
 	-webkit-transform: rotateZ(45deg);
 	-moz-transform: rotateZ(45deg);
+	-ms-transform: rotateZ(45deg);
 }
 
 .back-s {
 	-webkit-transform: rotateZ(-45deg);
 	-moz-transform: rotateZ(-45deg);
+	-ms-transform: rotateZ(-45deg);
 }
 
 
@@ -286,6 +323,7 @@ section {
 	cursor: pointer;
 	-webkit-transition: all ease 0.5s;
 	-moz-transition: all ease 0.5s;
+	-ms-transition: all ease 0.5s;
 	border-left: 2px solid transparent;
 	padding-left:0.2rem ;
 
@@ -300,20 +338,13 @@ section {
 
 /*自我介绍页主体*/
 .introduce-content{
-	width:8rem;
-	height: 85%;
-	/*background: orange;*/
-	margin:auto;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	/*background: purple;*/
+	margin:0.55rem auto;
+	display: inline-block;
+	max-width: 8rem;
 }
 .head-img{
 	width: 100%;
-	height: 20%;
+	height: 1.2rem;
 	/*background: red;*/
 	text-align: center;
 }
@@ -324,7 +355,7 @@ section {
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	-ms-border-radius: 50%;
-	-moz-border-radius: 50%;
+	border-radius: 50%;
 }
 .int{
 	padding-top: 10%;
@@ -359,10 +390,22 @@ section {
 	float: right;
 	/*background: green;*/
 }
+/*技能页内部样式*/
+.skill-content{
+	background: rgba(232,231,225,.62);
+	position: absolute;
+	transition: 1s ease-in-out;
+	-ms-transition: 1s ease-in-out;
+	-moz-transition:1s ease-in-out；
+	-o-transition:1s ease-in-out;
+	min-height: 4rem;
+}
 
-
-
-
+.skill-content h2{
+	font-size: 0.46rem;
+	font-family:"Microsoft YaHei";
+	color: white;
+}
 
 /*响应式*/
 @media only screen and (max-width: 800px) {
@@ -385,23 +428,41 @@ section {
 		top: 0.02rem;
 	}
 }
+
 @media only screen and (max-width: 490px) {
 	.introduce-content{
-		width: 100%;
+		width: 4rem;
+		margin-top: 0.55rem;
+	}
+	.introduce-content-left{
+		padding-top: 0.1rem;
+        margin-top:-0.3rem; 
+
+        
 	}
 	.introduce-content-left li{
 		width: 2.5rem;
 		margin: 0 auto;
 	}
 	.introduce-content-right{
-		width: 3rem;
-		margin: 0 auto;
+		padding-top: 0;
+		margin-top: -0.2frem;
+
 	}
 	.int{
-		padding-top: 0.3rem;
 		width: 60%;
 		float: none;
 		display: inline-block;
 }
+.int li{
+		margin-bottom: 0;
+}
+.img{
+	transform: scale(0.6);
+    -moz-transform:scale(0.6);
+    -ms-transform: scale(0.6);
+    -o-transform: scale(0.6);
+}
+
 
 }

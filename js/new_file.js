@@ -7,23 +7,27 @@ $(function() {
 	var index = 0;
 
 	function load(obj) {
-		for(var i = 0; i < obj.arr.length; i++) {
+		for (var i = 0; i < obj.arr.length; i++) {
 			var img = new Image();
 			img.src = obj.arr[i];
 			img.onload = function() {
 				index++;
-				if(index == obj.arr.length) {
+				if (index == obj.arr.length) {
 					obj.loaded();
 				}
 			}
 		}
 	}
+
+
+
 	load(obj);
 
 	function loadeds() {
-		$(".img").css("background",'url("img/FullSizeRender.jpg")');
-		$(".img").css("backgroundSize",'cover');
-		
+		$("body").css("visibility", "visible")
+		$(".img").css("background", 'url("img/FullSizeRender.jpg")');
+		$(".img").css("backgroundSize", 'cover');
+
 		var height = $(window).height();
 		$(".welcom-word").css({
 			marginTop: height / 2 - $(".welcom-word").height() / 2,
@@ -41,15 +45,17 @@ $(function() {
 		//处理浏览器滚轮兼容
 		function MouseWheel(ele, fun) {
 			var agent = window.navigator.userAgent;
-			if(agent.indexOf("Firefox") != -1) {
+			if (agent.indexOf("Firefox") != -1) {
 				ele.addEventListener("DOMMouseScroll", wheel);
 			} else {
 				ele.onmousewheel = wheel;
 			}
 
+
+
 			function wheel(ev) {
 				var down = false;
-				if(ev.detail > 0 || ev.wheelDelta < 0) {
+				if (ev.detail > 0 || ev.wheelDelta < 0) {
 					down = true;
 				}
 
@@ -59,9 +65,10 @@ $(function() {
 		}
 		MouseWheel($(".show")[0], fun);
 		var swit = true;
+
 		function fun(bol) {
-			if(swit) {
-				if(bol) {
+			if (swit) {
+				if (bol) {
 					//向下滚.
 					$(".mask").css("-webkit-animation", "dis 0.8s ease forwards");
 					$(".welcom-word").fadeOut()
@@ -71,7 +78,7 @@ $(function() {
 						easing: "easeOutBounce",
 						duration: 800
 					})
-					if(Math.abs($(".show")[0].offsetTop) >= height * 4) {
+					if (Math.abs($(".show")[0].offsetTop) >= height * 4) {
 						$(".show").css("top", -height * 4)
 					} else {
 						top -= height;
@@ -86,7 +93,7 @@ $(function() {
 
 				} else {
 					//向上滚
-					if(Math.abs($(".show")[0].offsetTop) <= height) {
+					if (Math.abs($(".show")[0].offsetTop) <= height) {
 						$(".mask").css("-webkit-animation", "_dis 2s ease forwards");
 						$(".welcom-word").fadeIn();
 						$(".nav").animate({
@@ -151,6 +158,7 @@ $(function() {
 				right: "-3em"
 			}, 500)
 		})
+
 		$(".back").on("touchstart", function(e) {
 			e.preventDefault();
 			e.cancelBubble = true;
@@ -182,10 +190,10 @@ $(function() {
 		var touchbol = true;
 		touch.on($(".show"), "swipe", function(e) {
 			e.preventDefault();
-			if(touchbol) {
-				if(e.direction == "down") {
+			if (touchbol) {
+				if (e.direction == "down") {
 					touchbol = false;
-					if(Math.abs($(".show")[0].offsetTop) <= height) {
+					if (Math.abs($(".show")[0].offsetTop) <= height) {
 						$(".mask").css("-webkit-animation", "_dis 2s ease forwards");
 						$(".welcom-word").fadeIn();
 						$(".nav").animate({
@@ -207,8 +215,8 @@ $(function() {
 					}
 				}
 			}
-			if(e.direction == "up") {
-				if(touchbol) {
+			if (e.direction == "up") {
+				if (touchbol) {
 					touchbol = false;
 					$(".mask").css("-webkit-animation", "dis 0.8s ease forwards");
 					$(".welcom-word").fadeOut()
@@ -220,7 +228,7 @@ $(function() {
 					}, function() {
 						touchbol = true;
 					})
-					if(Math.abs($(".show")[0].offsetTop) >= height * 4) {
+					if (Math.abs($(".show")[0].offsetTop) >= height * 4) {
 						$(".show").css("top", -height * 4)
 						touchbol = true;
 					} else {
@@ -234,5 +242,26 @@ $(function() {
 				}
 			}
 		})
+
+		//技能页脚本
+		function skillpos() {
+			var w = $(window).width();
+			var h = $(window).height();
+			$(".skill-content").css({
+				width: w * .8,
+				height: h * .8,
+				left: w * .1,
+				top: h * .1
+			});
+		}
+		skillpos();
+		$(window).resize(function() {
+			clearInterval(timer);
+			var timer = setTimeout(function() {
+				skillpos()
+			}, 500)
+
+		})
+
 	}
 })
